@@ -1,0 +1,51 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: #f8eae2;
+}
+
+h1 {
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+form {
+  text-align: center;
+  background-color: rgb(164, 206, 206);
+  padding: 30px;
+  width: 20vw;
+  height: 32vh;
+  margin: auto;
+}
+
+input:focus {
+  outline: none;
+}
+
+.usernameInput {
+  margin-bottom: 20px;
+  width: 50%;
+  height: 4vh;
+  padding-left: 3%;
+  background-color: rgb(231, 240, 254);
+  border: 1px solid black;
+}
+
+.passwordInput {
+  width: 50%;
+  height: 4vh;
+  padding-left: 3%;
+  margin-bottom: 20px;
+  background-color: rgb(231, 240, 254);
+  border: 1px solid black;
+}
+
+p {
+  font-size: 15px;
+  color: rgb(158, 27, 27);
+}
+.signIn {
+  width: 25%;
+  height: 4vh;
+  background-color: #fff;
+  border: none;
+}

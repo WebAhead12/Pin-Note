@@ -4,20 +4,21 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>Document</title>
   </head>
   <body>
     <form action="/" metod="POST" class="signInContainer">
-      <dev class="signInTitle"
-        >Sign In
-        <label class="signInLabel" for="username"> Sign-In</label>
-      </dev>
+      <div class="signInTitle"></div>
+        <h1>Sign In to your Note-Pad</h1>
+        <!-- <label class="signInLabel" for="username"> Sign-In</label> -->
+      </div>
       <br />
       <input
         class="usernameInput"
         id="username"
         placeholder="Username"
-        required
+        
       />
       <br />
       <input
@@ -26,9 +27,11 @@
         name="password"
         type="password"
         placeholder="Password"
-        required
+        
       />
-      <button class="signIn" type="submit"></button>
+      <p id="errPar"> </p>
+      <button class="signIn" type="submit">Sign-In</button>
     </form>
+    <script src="index.js"></script>
   </body>
 </html>

@@ -1,0 +1,28 @@
+{
+  "name": "pin-note",
+  "version": "1.0.0",
+  "description": "DB Scheme ![](https://i.imgur.com/xR0i1Tx.png)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WebAhead12/Pin-Note.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WebAhead12/Pin-Note/issues"
+  },
+  "homepage": "https://github.com/WebAhead12/Pin-Note#readme",
+  "dependencies": {
+    "cookie-parser": "^1.4.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.15",
+    "pg": "^8.7.1"
+  }
+}

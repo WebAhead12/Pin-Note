@@ -2,7 +2,7 @@
 ## Are you a hot mess.  😨
 ## Do you feel uslees at the end of the day.  💩
 ## then this website is for you. 👍
-## just for today you can create your on Pin-note for just 1.99$ 
+## just for today you can create your on Pin-note for just 1.99💲
 
 DB Scheme
 ![](https://i.imgur.com/xR0i1Tx.png)

@@ -1,0 +1,59 @@
+html, body {
+    overflow: hidden;
+  }
+body{
+
+    outline: none;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+.header{
+  width: auto;
+  height: auto;
+}
+.Add-btn{
+    margin: 20px;
+}
+.log-out-btn{
+    position:absolute;
+    top: 10px;
+    right:0;
+}
+#note {
+    position: absolute;
+    z-index: 9;
+    height:10em;
+    width:10em;
+    text-align: center;
+
+  }
+
+
+h2 {
+    font-weight: bold;
+    font-size: 2rem;
+  }
+  p {
+    font-family: 'Reenie Beanie';
+    font-size: 2rem;
+  }
+  li{
+    list-style:none;
+  }
+  li{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+li {
+    text-decoration:none;
+    color:#000;
+    background:#ffc;
+    display:block;
+    width:10em;
+    padding:1em;
+    box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+    margin:1em;
+  }

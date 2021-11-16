@@ -51,9 +51,9 @@ DB Scheme
 
 
 ## Work Distribution
-script.js: Julio + Zahi <br>
+javascript: Julio + Zahi <br>
 CSS: Zahi + diana<br> 
-index.html: Zahi + Julio +diana<br>
-server.js/database: Julio + Zahi<br>
+html: Zahi + Julio +diana<br>
+Backend: Julio <br>
 
 

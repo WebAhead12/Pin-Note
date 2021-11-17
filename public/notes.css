@@ -14,6 +14,7 @@ body {
   height: auto;
 }
 .Add-btn {
+  cursor: pointer;
   margin: 20px;
 }
 .log-out-btn {
@@ -29,27 +30,22 @@ body {
   text-align: center;
 }
 
-h2 {
+.title {
   font-weight: bold;
   font-size: 2rem;
 }
-p {
+.text {
   font-family: "Reenie Beanie";
   font-size: 2rem;
 }
-li {
+.list {
   list-style: none;
-}
-li {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-}
-li {
   text-decoration: none;
   color: #000;
   background: #ffc;
-  display: block;
   width: 10em;
   padding: 1em;
   box-shadow: 5px 5px 7px rgba(33, 33, 33, 0.7);

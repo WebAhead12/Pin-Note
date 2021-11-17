@@ -166,13 +166,9 @@ function addNote() {
         header.insertBefore(h2, input);
         header.removeChild(input);
 
-        // addanote.classList.add("note");
+       
         h2.classList.add("title");
-        // paragraph.classList.add("text");
 
-        // removeBtn.classList.add("delete");
-        // editTitleBtn.classList.add("edit");
-        // editNoteBtn.classList.add("edit");
         button.textContent = "✏️";
       }
     }

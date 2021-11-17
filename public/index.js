@@ -30,6 +30,7 @@ form.addEventListener("submit", (event) => {
     fetch("/log-in", {
       method: "POST",
       body: JSON.stringify({ username: username, password: password }),
+      headers: { "content-type": "application/json" },
     })
       .then((response) => {
         return response.json();
@@ -38,6 +39,10 @@ form.addEventListener("submit", (event) => {
         if (response.response == "success") {
           window.location.href = "/notes";
         }
+      })
+      .catch((err) => {
+        console.log(err);
+        alert("Something went wrong while trying to log-in");
       });
   }
 });

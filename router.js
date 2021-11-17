@@ -21,5 +21,7 @@ router.use(express.static(path.join(__dirname, "public")));
 router.use((req, res) => {
   res.redirect("/");
 });
-
+router.get("/log-out", (req, res) => {
+  res.send({ response: "success" });
+});
 module.exports = router;

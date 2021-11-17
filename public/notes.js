@@ -63,7 +63,7 @@ function addNote(){
   const removeBtn = document.createElement('button')
   const editTitleBtn = document.createElement('button')
   const editNoteBtn = document.createElement('button')
-  
+  const date = document.createElement('date')
   
   addanote.classList.add('note')
   h2.classList.add('title')
@@ -81,13 +81,14 @@ function addNote(){
   list.appendChild(removeBtn)
   list.appendChild(editTitleBtn)
   list.appendChild(editNoteBtn)
-
+  list.appendChild(date)
 
   h2.innerText='title';
   paragraph.innerText='Your Note';
   removeBtn.textContent = 'remove';
   editTitleBtn.textContent = 'editTitle';
   editNoteBtn.textContent = 'editNote';
+  date.textContent = '10-10-2020'
  
  
   // makes the note dragable
@@ -181,3 +182,18 @@ function addNote(){
     }
   });
 }
+// log out
+const logout = getElementById('logout')
+
+logout.addEventListener("click", (event) => {
+    fetch("/log-out")
+      .then((response) => {
+        return response.json();
+      })
+      .then((response) => {
+        if (response.response == "success") {
+          window.location.href = "/";
+        }
+      });
+  }
+);

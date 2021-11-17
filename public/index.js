@@ -35,9 +35,7 @@ form.addEventListener("submit", (event) => {
         return response.json();
       })
       .then((response) => {
-        console.log(response.reponse);
         if (response.response == "success") {
-          console.log(1);
           window.location.href = "/notes";
         }
       });

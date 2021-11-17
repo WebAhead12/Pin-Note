@@ -1,20 +1,23 @@
 body {
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-  background-color: #f8eae2;
+  background-color: rgb(10, 117, 248);
 }
 
 h1 {
+  color: rgb(192, 196, 212);
   text-align: center;
-  padding-bottom: 20px;
+  padding-bottom: 40px;
 }
 
 form {
   text-align: center;
-  background-color: rgb(164, 206, 206);
+  background-color: #fff;
   padding: 30px;
   width: 20vw;
-  height: 32vh;
+  height: 36vh;
   margin: auto;
+  margin-top: 10%;
+  border-radius: 10px;
 }
 
 input:focus {
@@ -23,29 +26,49 @@ input:focus {
 
 .usernameInput {
   margin-bottom: 20px;
-  width: 50%;
+  width: 15vw;
   height: 4vh;
   padding-left: 3%;
-  background-color: rgb(231, 240, 254);
-  border: 1px solid black;
+  background-color: rgb(236, 240, 246);
+  border: 6px solid rgb(176, 208, 248);
+  margin-bottom: 40px;
 }
 
 .passwordInput {
-  width: 50%;
+  width: 15vw;
   height: 4vh;
   padding-left: 3%;
-  margin-bottom: 20px;
-  background-color: rgb(231, 240, 254);
-  border: 1px solid black;
+  /* margin-bottom: 65px; */
+  background-color: rgb(236, 240, 246);
+  border: 6px solid rgb(176, 208, 248);
+
+  margin-bottom: 45px;
+}
+
+input::placeholder {
+  color: rgb(176, 208, 248);
+}
+
+input,
+select,
+textarea {
+  color: #535566;
 }
 
 p {
   font-size: 15px;
-  color: rgb(158, 27, 27);
+  color: rgb(36, 49, 233);
 }
+
 .signIn {
-  width: 25%;
+  color: #fff;
+  width: 35%;
   height: 4vh;
-  background-color: #fff;
+  background-color: rgb(253, 113, 51);
   border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.signIn:active {
 }

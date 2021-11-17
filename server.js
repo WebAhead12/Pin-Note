@@ -5,7 +5,4 @@ const server = express();
 
 server.use(express.urlencoded({ extended: false }));
 server.use(router);
-
-server.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
-});
+server.listen(PORT, () => console.log(`listening on http://localhost:${PORT}....`));

@@ -28,6 +28,7 @@ function dragElement(elmnt) {
   function elementDrag(e) {
     e = e || window.event;
     console.log(1);
+    console.log(e.target);
     e.preventDefault();
     // calculate the new cursor position:
     pos1 = pos3 - e.clientX;
@@ -50,6 +51,7 @@ function dragElement(elmnt) {
 
   function closeDragElement() {
     /* stop moving when mouse button is released:*/
+
     document.onmouseup = null;
     document.onmousemove = null;
   }

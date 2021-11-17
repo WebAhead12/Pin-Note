@@ -6,7 +6,6 @@ function dragElement(elmnt) {
     pos3 = 0,
     pos4 = 0;
 
-  /* otherwise, move the DIV from anywhere inside the DIV:*/
   elmnt.onmousedown = dragMouseDown;
 
   function dragMouseDown(e) {

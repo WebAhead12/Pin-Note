@@ -1,4 +1,3 @@
-
 const add = document.getElementById("Add-btn");
 
 
@@ -61,13 +60,124 @@ function addNote(){
   const list = document.createElement("li")
   const h2 = document.createElement('h2')
   const paragraph = document.createElement('p')
+  const removeBtn = document.createElement('button')
+  const editTitleBtn = document.createElement('button')
+  const editNoteBtn = document.createElement('button')
+  
+  
   addanote.classList.add('note')
   h2.classList.add('title')
   paragraph.classList.add('text')
   list.classList.add('list')
+  removeBtn.classList.add('delete')
+  editTitleBtn.classList.add('edit')
+  editNoteBtn.classList.add('edit')
+  
+
   body.appendChild(addanote)
   addanote.appendChild(list)
   list.appendChild(h2)
   list.appendChild(paragraph)
+  list.appendChild(removeBtn)
+  list.appendChild(editTitleBtn)
+  list.appendChild(editNoteBtn)
+
+
+  h2.innerText='title';
+  paragraph.innerText='Your Note';
+  removeBtn.textContent = 'remove';
+  editTitleBtn.textContent = 'editTitle';
+  editNoteBtn.textContent = 'editNote';
+ 
+ 
+  // makes the note dragable
   dragElement(addanote);
+  
+  
+  // the delete button / edit / save  
+  addanote.addEventListener('click', (event) => {
+    if(event.target.tagName === 'BUTTON') {
+      
+      const button = event.target;
+      const list = button.parentNode;
+      const addanote = list.parentNode;
+      
+      if(button.textContent === 'remove') {
+        addanote.removeChild(list);
+      } else if(button.textContent === 'editTitle') {
+        
+        const h2 = list.firstElementChild;
+        const input = document.createElement('input');
+       
+        input.addEventListener('mousedown' , (event)=>{
+          event.stopPropagation();
+        })
+        
+        input.type = 'text';
+        input.value = h2.textContent;
+       
+        list.insertBefore(input, h2);
+        list.removeChild(h2);
+        
+        button.textContent = 'saveTitle'; 
+      }else if(button.textContent === 'editNote') {
+         
+        const paragraph = list.children[1];
+          const input = document.createElement('input');
+         
+          input.addEventListener('mousedown' , (event)=>{
+            event.stopPropagation();
+          })
+         
+          input.type = 'text';
+          input.value = paragraph.textContent;
+         
+          list.insertBefore(input, paragraph);
+          list.removeChild(paragraph);
+         
+          button.textContent = 'saveNote';
+      } else if(button.textContent === 'saveNote') {
+            const input = list.children[1];
+            const paragraph = document.createElement('paragraph');
+           
+            paragraph.textContent = input.value;
+            
+            
+            list.insertBefore(paragraph, input);
+            list.removeChild(input);
+           
+           
+            addanote.classList.add('note')
+            h2.classList.add('title')
+            paragraph.classList.add('text')
+            list.classList.add('list')
+            removeBtn.classList.add('delete')
+            editTitleBtn.classList.add('edit')
+            editNoteBtn.classList.add('edit')
+            button.textContent = 'editNote';
+      } else if(button.textContent === 'saveTitle') {
+        
+            const input = list.firstElementChild;
+            const h2 = document.createElement('h2');
+        
+            h2.textContent = input.value;
+
+        
+            list.insertBefore(h2, input);
+            list.removeChild(input);
+
+
+            addanote.classList.add('note')
+            h2.classList.add('title')
+            paragraph.classList.add('text')
+            list.classList.add('list')
+            removeBtn.classList.add('delete')
+            editTitleBtn.classList.add('edit')
+            editNoteBtn.classList.add('edit')
+            button.textContent = 'editTitle';
+      
+      
+      }
+    }
+  });
 }

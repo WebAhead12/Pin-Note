@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const path = require("path");
 const verifyUser = require("./middleware/verifyUser");
-const handlers = require("./handlers");
+// const handlers = require("./handlers");
 const jwt = require("jsonwebtoken");
 let SECRET = verifyUser.SECRET;
 
@@ -28,7 +28,7 @@ router.get("/notes", (req, res) => {
 });
 router.use(express.static(path.join(__dirname, "public")));
 
-router.get("/notes/data", handlers.notes);
+// router.get("/notes/data", handlers.notes);
 
 router.use((req, res) => {
   res.redirect("/");

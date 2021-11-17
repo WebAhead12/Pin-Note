@@ -1,13 +1,11 @@
 const add = document.getElementById("Add-btn");
 
-
 function dragElement(elmnt) {
   var pos1 = 0,
     pos2 = 0,
     pos3 = 0,
     pos4 = 0;
 
-  /* otherwise, move the DIV from anywhere inside the DIV:*/
   elmnt.onmousedown = dragMouseDown;
 
   function dragMouseDown(e) {
@@ -52,148 +50,145 @@ function dragElement(elmnt) {
   }
 }
 //
- add.addEventListener('click', addNote)
+add.addEventListener("click", addNote);
 // add a note and edit it
-function addNote(){
-  const body = document.querySelector("body")
-  const addanote = document.createElement('div')
-  const list = document.createElement("li")
-  const h2 = document.createElement('h2')
-  const paragraph = document.createElement('p')
-  const removeBtn = document.createElement('button')
-  const editTitleBtn = document.createElement('button')
-  const editNoteBtn = document.createElement('button')
-  const date = document.createElement('date')
-  
-  addanote.classList.add('note')
-  h2.classList.add('title')
-  paragraph.classList.add('text')
-  list.classList.add('list')
-  removeBtn.classList.add('delete')
-  editTitleBtn.classList.add('edit')
-  editNoteBtn.classList.add('edit')
-  
+function addNote() {
+  const body = document.querySelector("body");
+  const addanote = document.createElement("div");
+  const list = document.createElement("li");
+  const h2 = document.createElement("h2");
+  const paragraph = document.createElement("p");
+  const removeBtn = document.createElement("button");
+  const editTitleBtn = document.createElement("button");
+  const editNoteBtn = document.createElement("button");
+  const date = document.createElement("date");
+  const header = document.createElement("div");
+  const noteBody = document.createElement("div");
+  const footer = document.createElement("div");
 
-  body.appendChild(addanote)
-  addanote.appendChild(list)
-  list.appendChild(h2)
-  list.appendChild(paragraph)
-  list.appendChild(removeBtn)
-  list.appendChild(editTitleBtn)
-  list.appendChild(editNoteBtn)
-  list.appendChild(date)
+  header.classList.add("header");
+  noteBody.classList.add("noteBody");
+  footer.classList.add("footer");
 
-  h2.innerText='title';
-  paragraph.innerText='Your Note';
-  removeBtn.textContent = 'remove';
-  editTitleBtn.textContent = 'editTitle';
-  editNoteBtn.textContent = 'editNote';
-  date.textContent = '10-10-2020'
- 
- 
+  addanote.classList.add("note");
+  h2.classList.add("title");
+  paragraph.classList.add("text");
+  list.classList.add("list");
+  removeBtn.classList.add("delete");
+  editTitleBtn.classList.add("edit");
+  editNoteBtn.classList.add("editNote");
+
+  body.appendChild(addanote);
+  addanote.appendChild(list);
+  list.appendChild(header);
+  list.appendChild(noteBody);
+  list.appendChild(footer);
+  header.appendChild(h2);
+  header.appendChild(editTitleBtn);
+  noteBody.appendChild(paragraph);
+  noteBody.appendChild(editNoteBtn);
+  footer.appendChild(date);
+  footer.appendChild(removeBtn);
+
+  h2.innerText = "title";
+  paragraph.innerText = "Your Note";
+  removeBtn.textContent = "X";
+  editTitleBtn.textContent = "✏️";
+  editNoteBtn.textContent = "✏️ ";
+  date.textContent = "10-10-2020";
+
   // makes the note dragable
   dragElement(addanote);
-  
-  
-  // the delete button / edit / save  
-  addanote.addEventListener('click', (event) => {
-    if(event.target.tagName === 'BUTTON') {
-      
+
+  // the delete button / edit / save
+  addanote.addEventListener("click", (event) => {
+    if (event.target.tagName === "BUTTON") {
       const button = event.target;
-      const list = button.parentNode;
+
       const addanote = list.parentNode;
-      
-      if(button.textContent === 'remove') {
+
+      if (button.textContent === "remove") {
         addanote.removeChild(list);
-      } else if(button.textContent === 'editTitle') {
-        
-        const h2 = list.firstElementChild;
-        const input = document.createElement('input');
-       
-        input.addEventListener('mousedown' , (event)=>{
+      } else if (button.textContent === "✏️") {
+        const h2 = list.firstElementChild.firstChild;
+        const input = document.createElement("input");
+
+        input.addEventListener("mousedown", (event) => {
           event.stopPropagation();
-        })
-        
-        input.type = 'text';
+        });
+
+        input.type = "text";
         input.value = h2.textContent;
-       
-        list.insertBefore(input, h2);
-        list.removeChild(h2);
-        
-        button.textContent = 'saveTitle'; 
-      }else if(button.textContent === 'editNote') {
-         
-        const paragraph = list.children[1];
-          const input = document.createElement('input');
-         
-          input.addEventListener('mousedown' , (event)=>{
-            event.stopPropagation();
-          })
-         
-          input.type = 'text';
-          input.value = paragraph.textContent;
-         
-          list.insertBefore(input, paragraph);
-          list.removeChild(paragraph);
-         
-          button.textContent = 'saveNote';
-      } else if(button.textContent === 'saveNote') {
-            const input = list.children[1];
-            const paragraph = document.createElement('paragraph');
-           
-            paragraph.textContent = input.value;
-            
-            
-            list.insertBefore(paragraph, input);
-            list.removeChild(input);
-           
-           
-            addanote.classList.add('note')
-            h2.classList.add('title')
-            paragraph.classList.add('text')
-            list.classList.add('list')
-            removeBtn.classList.add('delete')
-            editTitleBtn.classList.add('edit')
-            editNoteBtn.classList.add('edit')
-            button.textContent = 'editNote';
-      } else if(button.textContent === 'saveTitle') {
-        
-            const input = list.firstElementChild;
-            const h2 = document.createElement('h2');
-        
-            h2.textContent = input.value;
 
-        
-            list.insertBefore(h2, input);
-            list.removeChild(input);
+        header.insertBefore(input, h2);
+        header.removeChild(h2);
 
+        button.textContent = "✔ ";
+      } else if (button.textContent === "✏️ ") {
+        const paragraph = list.children[1].firstChild;
+        console.log(list.children);
+        const input = document.createElement("input");
 
-            addanote.classList.add('note')
-            h2.classList.add('title')
-            paragraph.classList.add('text')
-            list.classList.add('list')
-            removeBtn.classList.add('delete')
-            editTitleBtn.classList.add('edit')
-            editNoteBtn.classList.add('edit')
-            button.textContent = 'editTitle';
-      
-      
+        input.addEventListener("mousedown", (event) => {
+          event.stopPropagation();
+        });
+
+        input.type = "text";
+        input.value = paragraph.textContent;
+
+        noteBody.insertBefore(input, paragraph);
+        noteBody.removeChild(paragraph);
+
+        button.textContent = "✔";
+      } else if (button.textContent === "✔") {
+        const input = list.children[1].firstChild;
+        const paragraph = document.createElement("paragraph");
+
+        paragraph.textContent = input.value;
+
+        noteBody.insertBefore(paragraph, input);
+        noteBody.removeChild(input);
+
+        addanote.classList.add("note");
+        h2.classList.add("title");
+        paragraph.classList.add("text");
+        list.classList.add("list");
+        removeBtn.classList.add("delete");
+        editTitleBtn.classList.add("edit");
+        editNoteBtn.classList.add("edit");
+        button.textContent = "✏️ ";
+      } else if (button.textContent === "✔ ") {
+        const input = list.firstElementChild.firstChild;
+        const h2 = document.createElement("h2");
+
+        h2.textContent = input.value;
+
+        header.insertBefore(h2, input);
+        header.removeChild(input);
+
+        // addanote.classList.add("note");
+        h2.classList.add("title");
+        // paragraph.classList.add("text");
+
+        // removeBtn.classList.add("delete");
+        // editTitleBtn.classList.add("edit");
+        // editNoteBtn.classList.add("edit");
+        button.textContent = "✏️";
       }
     }
   });
 }
 // log out
-const logout = getElementById('logout')
+const logout = document.getElementById("logout");
 
 logout.addEventListener("click", (event) => {
-    fetch("/log-out")
-      .then((response) => {
-        return response.json();
-      })
-      .then((response) => {
-        if (response.response == "success") {
-          window.location.href = "/";
-        }
-      });
-  }
-);
+  fetch("/log-out")
+    .then((response) => {
+      return response.json();
+    })
+    .then((response) => {
+      if (response.response == "success") {
+        window.location.href = "/";
+      }
+    });
+});

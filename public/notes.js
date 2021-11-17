@@ -7,7 +7,7 @@ function dragElement(elmnt) {
     pos3 = 0,
     pos4 = 0;
 
-  /* otherwise, move the DIV from anywhere inside the DIV:*/
+
   elmnt.onmousedown = dragMouseDown;
 
   function dragMouseDown(e) {
@@ -60,11 +60,13 @@ function addNote(){
   const list = document.createElement("li")
   const h2 = document.createElement('h2')
   const paragraph = document.createElement('p')
-  const removeBtn = document.createElement('button')
   const editTitleBtn = document.createElement('button')
   const editNoteBtn = document.createElement('button')
+  const footer = document.createElement('div')
+  const removeBtn = document.createElement('button')
   const date = document.createElement('date')
-  
+
+
   addanote.classList.add('note')
   h2.classList.add('title')
   paragraph.classList.add('text')
@@ -78,9 +80,9 @@ function addNote(){
   addanote.appendChild(list)
   list.appendChild(h2)
   list.appendChild(paragraph)
-  list.appendChild(removeBtn)
   list.appendChild(editTitleBtn)
   list.appendChild(editNoteBtn)
+  list.appendChild(removeBtn)
   list.appendChild(date)
 
   h2.innerText='title';
@@ -94,6 +96,10 @@ function addNote(){
   // makes the note dragable
   dragElement(addanote);
   
+  // complete on click 
+  paragraph.addEventListener('click', function(){
+    paragraph.style.textDecoration = "line-through";
+})
   
   // the delete button / edit / save  
   addanote.addEventListener('click', (event) => {

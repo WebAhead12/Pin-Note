@@ -27,10 +27,19 @@ form.addEventListener("submit", (event) => {
   if (checkUser()) return;
   else {
     errPar.textContent = "";
+    fetch("/log-in", {
+      method: "POST",
+      body: JSON.stringify({ username: username, password: password }),
+    })
+      .then((response) => {
+        return response.json();
+      })
+      .then((response) => {
+        console.log(response.reponse);
+        if (response.response == "success") {
+          console.log(1);
+          window.location.href = "/notes";
+        }
+      });
   }
-
-  fetch("/log-in", {
-    method: "POST",
-    body: JSON.stringify({ username: username, password: password }),
-  });
 });

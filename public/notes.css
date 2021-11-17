@@ -39,7 +39,7 @@ body {
   width: 100px;
   height: 100px;
   font-size: 70px;
-  background-color: rgb(191, 195, 188);
+  background-color: rgb(253, 113, 51);
   border: none;
   border-radius: 50%;
   display: flex;
@@ -56,19 +56,19 @@ body {
   z-index: 9;
   height: 10em;
   width: 10em;
-  font-size: 20px;
-  text-align: center;
+  font-size: 15px;
+  /* text-align: center; */
   top: 300px;
 }
 
 .title {
   font-weight: bold;
-  font-size: 20px;
+  font-size: 15px;
 
   justify-content: space-between;
 }
 .text {
-  font-size: 18px;
+  font-size: 15px;
 }
 
 .list {
@@ -78,11 +78,11 @@ body {
   justify-content: space-between;
   text-decoration: none;
   color: #000;
-  background: #ffc;
+  background: rgb(208, 225, 246);
   width: 10vw;
   height: 20vh;
   padding: 1em;
-  box-shadow: 5px 5px 7px rgba(33, 33, 33, 0.7);
+  box-shadow: 1px 1px 3px rgba(33, 33, 33, 0.7);
   margin: 1em;
 }
 .header,
@@ -91,11 +91,19 @@ body {
   display: flex;
   justify-content: space-between;
 }
+.noteBody {
+  height: 80px;
+  font-size: 15px;
+}
+.footer {
+  margin-top: 10px;
+}
 .edit,
 .editNote,
 .delete {
   height: 25px;
   width: 30px;
+  border: none;
 }
 
 .log-out-btn {

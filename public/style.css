@@ -14,7 +14,7 @@ form {
   background-color: #fff;
   padding: 30px;
   width: 20vw;
-  height: 40vh;
+  /* height: 50vh; */
   margin: auto;
   margin-top: 10%;
   border-radius: 10px;
@@ -62,7 +62,7 @@ p {
   color: rgb(36, 49, 233);
 }
 
-.signIn {
+.signIn,.signUp {
   color: #fff;
   width: 35%;
   height: 4vh;
@@ -71,6 +71,7 @@ p {
   border-radius: 5px;
   cursor: pointer;
 }
-
-.signIn:active {
+.confirmPassword {
+  display: none;
 }
+

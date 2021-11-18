@@ -5,39 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@600&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@600&display=swap" rel="stylesheet" />
     <title>Document</title>
   </head>
   <body>
-    <form action="/" metod="POST" class="signInContainer">
-        <h1>Sign In to your Note-Pad</h1>
-        <!-- <label class="signInLabel" for="username"> Sign-In</label> -->
+    <form action="/" class="signInContainer">
+      <h1>Sign In to your Note-Pad</h1>
+      <!-- <label class="signInLabel" for="username"> Sign-In</label> -->
+      <div>
+        <input class="usernameInput" id="username" name="username" placeholder="Username" />
+
+        <br />
+        <input class="passwordInput" id="password" name="password" type="password" placeholder="Password" />
+        <br />
+        <input class="confirmPassword passwordInput" id="confirmPassword" name="confirmPassword" type="password" placeholder="confirmPassword" />
+
+        <p id="errPar"></p>
+        <!-- <br><br><br> -->
+
+        <button class="signIn" type="submit">Sign-In</button>
       </div>
-      <input
-        class="usernameInput"
-        id="username"
-        name="username"
-        placeholder="Username"
-        required
-      />
-     
-    <br />
-      <input
-        class="passwordInput"
-        id="password"
-        name="password"
-        type="password"
-        placeholder="Password"/>
-        
-        
-      <p id="errPar"> </p>
-      <!-- <br><br><br> -->
-    
-      <button class="signIn" type="submit">Sign-In</button>
-    </div>
     </form>
     <script src="index.js"></script>
   </body>

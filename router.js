@@ -1,26 +1,33 @@
 const express = require("express");
 const router = express.Router();
 const path = require("path");
-const verifyUser = require("./middleware/verifyUser");
-const handlers = require("./handlers");
+const cookieparser = require("cookie-parser");
+const verifyUser = require("./middleware/verifyUser.js");
+const loginHandler = require("./handlers/login.js");
+const getAuth = require("./middleware/getAuth.js");
+const notesHandler = require("./handlers/notes.js");
 const jwt = require("jsonwebtoken");
+const server = express();
 let SECRET = verifyUser.SECRET;
 
 server.use(cookieparser());
 server.use(express.urlencoded());
 server.use(express.json());
-server.use(verifyUser.verifyUser());
+
+server.use(verifyUser.verifyUser);
 
 router.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "index.html"));
 });
-
-router.post("/log-in", verifyUser.getAuth, (req, res) => {
-  const user = req.body;
-  const token = jwt.sign(user.username, SECRET);
+console.log(getAuth);
+router.post("/log-in", (req, res) => {
+  const user = req.body.username;
+  console.log(req.body);
+  console.log(user);
+  const token = jwt.sign(user, SECRET);
   res.cookie("user", token);
-  handlers.login.checkUser(user);
-  res.send({ response: "success" });
+  const response = loginHandler.checkUser(user);
+  res.send({ response: response });
 });
 
 router.get("/notes", (req, res) => {
@@ -28,11 +35,8 @@ router.get("/notes", (req, res) => {
 });
 router.use(express.static(path.join(__dirname, "public")));
 
-router.get("/notes/data", handlers.notes);
+// router.get("/notes/data", notesHandler());
 
-router.use((req, res) => {
-  res.redirect("/");
-});
 router.get("/log-out", (req, res) => {
   res.clearCookie("user");
   res.send({ response: "success" });

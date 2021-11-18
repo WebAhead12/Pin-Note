@@ -49,7 +49,7 @@ input:focus {
 }
 
 input::placeholder {
-  color: rgb(176, 208, 248);
+  color: rgb(0, 0, 0);
 }
 
 input,

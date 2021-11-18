@@ -13,13 +13,15 @@ function setUser(username, password) {
 }
 
 function checkUser(user) {
-  findUser(user.username).then((results) => {
+  console.log("name:" + user.username);
+  return findUser(user.username).then((results) => {
     if (results) {
       return ["Has User", results.password];
     } else {
+      setUser(user.username, user.password);
       return ["No User"];
     }
   });
 }
 
-module.exports = { setUser, checkUser };
+module.exports = { setUser, checkUser, findUser };

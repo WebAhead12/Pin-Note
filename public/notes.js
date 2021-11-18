@@ -1,4 +1,11 @@
 const add = document.getElementById("Add-btn");
+const username = document.getElementById("username-div");
+
+fetch("/test")
+  .then((response) => response.json())
+  .then((username1) => {
+    username.textContent = `Hello ${username1.name}`;
+  });
 
 function dragElement(elmnt) {
   var pos1 = 0,
@@ -96,7 +103,7 @@ function addNote() {
   editTitleBtn.textContent = "✐";
   editNoteBtn.textContent = "✐ ";
   date.textContent = "10-10-2020";
-
+  list.style.resize = "vertical";
   // makes the note dragable
   dragElement(addanote);
 

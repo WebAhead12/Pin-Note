@@ -13,7 +13,6 @@ const errObj = {
   password: "Please enter your password",
   passLength: "Password must be more than 6 digits",
   wrongPassword: "Password is incorrect",
-  noUser: "You need to make a user before you sign-in",
 };
 
 const checkUser = function () {
@@ -50,10 +49,8 @@ form.addEventListener("submit", (event) => {
           if (response.response[1] == password.value) {
             window.location.href = "/notes";
           } else {
-            errPar.textContent = wrongPassword;
+            errPar.textContent = errObj.wrongPassword;
           }
-        } else {
-          errPar.textContent = noUser;
         }
       })
       .catch((err) => {

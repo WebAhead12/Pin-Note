@@ -56,8 +56,8 @@ body {
   position: absolute;
   z-index: 9;
   font-size: 15px;
-  height: 200px;
-  width: 250px;
+  height: 250px;
+  width: 300px;
 
   top: 350px;
   padding-left: 12vh;
@@ -73,6 +73,10 @@ body {
 }
 .text {
   font-size: 13px;
+}
+
+input[type="text" i] {
+  width: 200px;
 }
 
 .list {

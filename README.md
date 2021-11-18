@@ -9,7 +9,8 @@ DB Scheme
 
 ## Server Routes
  - "/" -> (index.html) gets you to the first page which you login on it
- - POST "/log-in -> logs in the user in the db and cookie
+ - POST "/log-in" -> logs in the user in the db and cookie
+ - POST "/sign-up" -> creates the user in the db
  - GET "/log-out" -> logs out the user from the website
  - GET "/notes" notes.html
  - GET "/notes/data" gets the data from the db

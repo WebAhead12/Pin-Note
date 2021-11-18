@@ -63,8 +63,11 @@ p {
   color: rgb(36, 49, 233);
 }
 
-.signIn,.signUp {
+.signIn,
+.signUp {
   color: #fff;
+  font-weight: bold;
+
   width: 35%;
   height: 4vh;
   background-color: rgba(243, 126, 77, 0.822);
@@ -75,4 +78,3 @@ p {
 .confirmPassword {
   display: none;
 }
-

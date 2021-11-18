@@ -107,7 +107,7 @@ function addNote() {
 
       const addanote = list.parentNode;
 
-      if (button.textContent === "remove") {
+      if (button.textContent === "Delete") {
         addanote.removeChild(list);
       } else if (button.textContent === "✐") {
         const h2 = list.firstElementChild.firstChild;

@@ -102,6 +102,7 @@ body {
 }
 .footer {
   margin-top: 30px;
+  margin: -10px;
   /* width: 11vw; */
 }
 .edit,
@@ -139,11 +140,11 @@ date {
 }
 
 .edit {
-  font-size: 27px;
+  font-size: 25px;
   height: 40px;
 }
 
 .editNote {
-  font-size: 27px;
+  font-size: 25px;
   height: 40px;
 }

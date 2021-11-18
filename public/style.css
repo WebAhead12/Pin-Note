@@ -1,10 +1,10 @@
 body {
   font-family: "Roboto Mono", monospace;
-  background-color: rgb(208, 225, 246);
+  background-color: #f0f2f5;
 }
 
 h1 {
-  color: rgb(192, 196, 212);
+  color: rgb(0, 0, 0);
   text-align: center;
   padding-bottom: 40px;
 }
@@ -33,6 +33,7 @@ input:focus {
   /* border: 6px solid rgb(176, 208, 248); */
   border: none;
   margin-bottom: 40px;
+  border-radius: 5px;
 }
 
 .passwordInput {
@@ -43,12 +44,12 @@ input:focus {
   background-color: rgb(236, 240, 246);
   /* border: 6px solid rgb(176, 208, 248); */
   border: none;
-
+  border-radius: 5px;
   margin-bottom: 45px;
 }
 
 input::placeholder {
-  color: rgb(176, 208, 248);
+  color: rgb(0, 0, 0);
 }
 
 input,
@@ -66,7 +67,7 @@ p {
   color: #fff;
   width: 35%;
   height: 4vh;
-  background-color: rgb(253, 113, 51);
+  background-color: rgba(243, 126, 77, 0.822);
   border: none;
   border-radius: 5px;
   cursor: pointer;

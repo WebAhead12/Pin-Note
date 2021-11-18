@@ -71,7 +71,7 @@ function addNote() {
   footer.classList.add("footer");
 
   addanote.classList.add("note");
-  h2.classList.add("title");
+  h2.classList.add("Title");
   paragraph.classList.add("text");
   list.classList.add("list");
   removeBtn.classList.add("delete");
@@ -90,11 +90,11 @@ function addNote() {
   footer.appendChild(date);
   footer.appendChild(removeBtn);
 
-  h2.innerText = "title";
+  h2.innerText = "Title";
   paragraph.innerText = "Your Note";
-  removeBtn.textContent = "X";
-  editTitleBtn.textContent = "✏️";
-  editNoteBtn.textContent = "✏️ ";
+  removeBtn.textContent = "Delete";
+  editTitleBtn.textContent = "✐";
+  editNoteBtn.textContent = "✐ ";
   date.textContent = "10-10-2020";
 
   // makes the note dragable
@@ -107,9 +107,9 @@ function addNote() {
 
       const addanote = list.parentNode;
 
-      if (button.textContent === "remove") {
+      if (button.textContent === "Delete") {
         addanote.removeChild(list);
-      } else if (button.textContent === "✏️") {
+      } else if (button.textContent === "✐") {
         const h2 = list.firstElementChild.firstChild;
         const input = document.createElement("input");
 
@@ -123,8 +123,8 @@ function addNote() {
         header.insertBefore(input, h2);
         header.removeChild(h2);
 
-        button.textContent = "✔ ";
-      } else if (button.textContent === "✏️ ") {
+        button.textContent = "✓ ";
+      } else if (button.textContent === "✐ ") {
         const paragraph = list.children[1].firstChild;
         console.log(list.children);
         const input = document.createElement("input");
@@ -139,8 +139,8 @@ function addNote() {
         noteBody.insertBefore(input, paragraph);
         noteBody.removeChild(paragraph);
 
-        button.textContent = "✔";
-      } else if (button.textContent === "✔") {
+        button.textContent = "✓";
+      } else if (button.textContent === "✓") {
         const input = list.children[1].firstChild;
         const paragraph = document.createElement("paragraph");
 
@@ -150,14 +150,14 @@ function addNote() {
         noteBody.removeChild(input);
 
         addanote.classList.add("note");
-        h2.classList.add("title");
+        h2.classList.add("Title");
         paragraph.classList.add("text");
         list.classList.add("list");
         removeBtn.classList.add("delete");
         editTitleBtn.classList.add("edit");
         editNoteBtn.classList.add("edit");
-        button.textContent = "✏️ ";
-      } else if (button.textContent === "✔ ") {
+        button.textContent = "✐ ";
+      } else if (button.textContent === "✓ ") {
         const input = list.firstElementChild.firstChild;
         const h2 = document.createElement("h2");
 
@@ -166,10 +166,9 @@ function addNote() {
         header.insertBefore(h2, input);
         header.removeChild(input);
 
-       
-        h2.classList.add("title");
+        h2.classList.add("Title");
 
-        button.textContent = "✏️";
+        button.textContent = "✐";
       }
     }
   });

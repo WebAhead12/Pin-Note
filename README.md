@@ -51,8 +51,7 @@ DB Scheme
 ### NotesPage (pc):
 ![](https://i.imgur.com/Djv3Kzr.png)
 
-### NotesPage (phone):
-![](https://i.imgur.com/FmCkusV.png)
+
 
 
 ## Work Distribution
